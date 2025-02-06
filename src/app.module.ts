@@ -1,8 +1,10 @@
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Module } from '@nestjs/common';
-import { BoardService } from './board.service';
-import { Board } from './board.entity';
 import { BoardController } from './board.controller';
+import { BoardService } from './board.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Board } from './board.entity';
+import { CacheModule } from '@nestjs/cache-manager';
+import * as redisStore from 'cache-manager-ioredis';
+import { Module } from '@nestjs/common';
 
 @Module({
   imports: [
@@ -11,13 +13,19 @@ import { BoardController } from './board.controller';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'yourpassword',
+      password: 'password',
       database: 'mydb',
       autoLoadEntities: true,
       synchronize: true,
       logging: true,
     }),
     TypeOrmModule.forFeature([Board]),
+    CacheModule.register({
+      store: redisStore,
+      host: 'localhost',
+      port: 6379,
+      ttl: 10000,
+    }),
   ],
   controllers: [BoardController],
   providers: [BoardService],
