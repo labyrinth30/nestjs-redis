@@ -10,9 +10,9 @@ import { Module } from '@nestjs/common';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'my-db',
       port: 3306,
-      username: 'root',
+      username: 'user',
       password: 'password',
       database: 'mydb',
       autoLoadEntities: true,
@@ -22,7 +22,7 @@ import { Module } from '@nestjs/common';
     TypeOrmModule.forFeature([Board]),
     CacheModule.register({
       store: redisStore,
-      host: 'localhost',
+      host: 'my-cache-server',
       port: 6379,
       ttl: 10000,
     }),
