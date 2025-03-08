@@ -1,13 +1,13 @@
-FROM node
+FROM node:18
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install
 
-RUN npm run build
+COPY . .
 
 EXPOSE 3000
 
-ENTRYPOINT [ "node", "dist/main.js" ]
+CMD ["npm", "run", "start:dev"]

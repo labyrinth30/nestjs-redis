@@ -30,7 +30,6 @@ export class BoardService {
     });
 
     await this.cacheManager.set(cacheKey, boards);
-    console.log(await this.cacheManager.get(cacheKey));
 
     return boards;
   }
