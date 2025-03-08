@@ -7,7 +7,6 @@ import * as redisStore from 'cache-manager-ioredis';
 import { Module } from '@nestjs/common';
 import * as Joi from 'joi';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import * as fs from 'node:fs';
 
 @Module({
   imports: [
@@ -24,14 +23,6 @@ import * as fs from 'node:fs';
         logging: true,
         autoLoadEntities: true,
         synchronize: true,
-        ssl: {
-          ca: fs.readFileSync(__dirname + '/global-bundle.pem'),
-        },
-        extra: {
-          ssl: {
-            rejectUnauthorized: false,
-          },
-        },
       }),
       inject: [ConfigService],
     }),
