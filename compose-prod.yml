@@ -2,7 +2,7 @@ services:
   my-nestjs-app:
     build:
       context: .
-      dockerfile: ./Dockerfile-prod
+      dockerfile: ./Dockerfile.prod
     container_name: my-nestjs-app
     ports:
       - 3000:3000
