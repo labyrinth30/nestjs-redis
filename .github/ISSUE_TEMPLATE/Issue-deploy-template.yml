@@ -1,12 +1,12 @@
-name: "✨ Feature"
-description: "기능 추가"
-title: "[Feature]: Feature Title"
-labels: ["feature"]
+name: "🚀 Deploy"
+description: "배포 관련 작업"
+title: "[Deploy]: Deploy Title"
+labels: ["deploy"]
 body:
   - type: textarea
     attributes:
       label: 📄 설명
-      description: 새로운 기능에 대한 설명을 작성해 주세요.
+      description: 배포에 대한 설명을 작성해 주세요.
       placeholder: 자세히 적을수록 좋습니다!
     validations:
       required: true

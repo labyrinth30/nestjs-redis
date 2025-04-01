@@ -1,12 +1,12 @@
-name: "✨ Feature"
-description: "기능 추가"
-title: "[Feature]: Feature Title"
-labels: ["feature"]
+name: "🐞 Bug"
+description: "버그 수정"
+title: "[버그] 제목을 작성해주세요"
+labels: ["bug"]
 body:
   - type: textarea
     attributes:
       label: 📄 설명
-      description: 새로운 기능에 대한 설명을 작성해 주세요.
+      description: 해결할 버그에 대한 설명을 작성해 주세요.
       placeholder: 자세히 적을수록 좋습니다!
     validations:
       required: true
